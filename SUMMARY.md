@@ -7,6 +7,6 @@
   * [CSS 编程付规范](bian-cheng-gui-fan/css-bian-cheng-fu-gui-fan.md)
   * [JavaScript 编程规范](bian-cheng-gui-fan/javascript-bian-cheng-gui-fan.md)
   * [ES2015 编程规范](bian-cheng-gui-fan/es2015-bian-cheng-gui-fan.md)
-  * React 编程规范
+  * [React 编程规范](bian-cheng-gui-fan/react-bian-cheng-gui-fan.md)
   * [Vue 编程规范](bian-cheng-gui-fan/vue-bian-cheng-gui-fan.md)
 
