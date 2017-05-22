@@ -413,5 +413,7 @@ Less和Sass中的操作符，变量，数值之间均加上空格。
 .element-heading { ... }
 ```
 
+> 本HTML规范参照 [bootstrap编程规范](http://codeguide.bootcss.com/#css)，如有建议或补充，及时提出。
+
 
 
