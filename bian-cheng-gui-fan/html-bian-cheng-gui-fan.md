@@ -55,7 +55,7 @@ IE兼容模式，设置IE兼容模式meta。
 
 不要省略可选的结束标签（closing tag）（例如，`</li>`或`</body>`）。
 
-```
+```HTML
 <!-- bad -->
 <ul>
   <li>html编程规范，语法规范
@@ -71,7 +71,7 @@ IE兼容模式，设置IE兼容模式meta。
 
 引入CSS和JavaScript文件，不需要指定type属性。
 
-```
+```HTML
 <!-- good -->
 <link rel="stylesheet" href="code-guide.css">
 
@@ -93,7 +93,7 @@ IE兼容模式，设置IE兼容模式meta。
 
 class 用于标识高度可复用组件，因此应该排在首位。id 用于标识具体组件，应当谨慎使用（例如，页面内的书签），因此排在第二位。
 
-```
+```HTML
 <!-- good -->
 <a class="..." id="..." data-toggle="modal" href="#">
   Example link
@@ -106,7 +106,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 
 布尔型属性不赋值
 
-```
+```HTML
 <!-- bad -->
 <input type="text" disabled="disabled">
 
@@ -130,7 +130,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 
 尽量减少标签的数量，但是也要注意在编写HTML时，结构与显示分离。
 
-```
+```HTML
 <!-- bad -->
 <span class="avatar">
   <img src="...">
