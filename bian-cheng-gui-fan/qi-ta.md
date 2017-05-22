@@ -13,19 +13,24 @@
 ### 配置代码示例
 
 ```
+# editorconfig.org
+
 root = true
 
 [*]
 charset = utf-8
-indent_style = space
-indent_size = 2
 end_of_line = lf
-insert_final_newline = tru
+indent_size = 2
+indent_style = space
+insert_final_newline = true
 trim_trailing_whitespace = true
 
 [*.md]
 trim_trailing_whitespace = false
+
+[*.py]
+indent_size = 4
 ```
 
-详细配置说明，见[官方文档](http://editorconfig.org/#file-format-details)
+
 
