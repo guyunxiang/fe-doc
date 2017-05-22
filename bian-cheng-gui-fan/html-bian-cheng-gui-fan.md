@@ -49,6 +49,38 @@ HTML页面添加标准模式声明，确保在每一个浏览器中拥有一致�
 <html>
   ...
 </html>
+
+// good
+<html lang="zh-cn">
+  ...
+</html>
+```
+
+字符编码，设置声明字符编码meta。
+
+```
+// good
+<meta charset="UTF-8">
+```
+
+IE兼容模式，设置IE兼容模式meta。
+
+```
+// good
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+```
+
+引入CSS和JavaScript文件，不需要指定type属性。
+
+```
+// good
+<link rel="stylesheet" href="code-guide.css">
+
+<style>
+  ...
+</style>
+
+<src src="index.js">
 ```
 
 
