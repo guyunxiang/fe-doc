@@ -80,8 +80,75 @@ IE兼容模式，设置IE兼容模式meta。
   ...
 </style>
 
-<src src="index.js">
+<src src="index.js"></script>
 ```
+
+按照以下顺序排列属性顺序：
+
+* `class`
+* `id`,`name`
+* `data-*`
+* `src`,`for`,`type`,`href`,`value`
+* `title`,`alt`
+* `role`,`aria-*`
+
+class 用于标识高度可复用组件，因此应该排在首位。id 用于标识具体组件，应当谨慎使用（例如，页面内的书签），因此排在第二位。
+
+```
+// good
+<a class="..." id="..." data-toggle="modal" href="#">
+  Example link
+</a>
+
+<input class="form-control" type="text">
+
+<img src="..." alt="...">
+```
+
+布尔型属性不赋值
+
+```
+// bad
+<input type="text" disabled="disabled">
+
+<input type="checkbox" value="1" checked="checked">
+
+<select>
+  <option value="1" selected="selected">1</option>
+</select>
+
+// good
+<input type="text" disabled>
+
+<input type="checkbox" value="1" checked>
+
+<select>
+  <option value="1" selected>1</option>
+</select>
+
+```
+
+---
+
+尽量减少标签的数量，但是也要注意在编写HTML时，结构与显示分离。
+
+```
+// bad
+<span class="avatar">
+  <img src="...">
+</span>
+
+// good
+<img class="avatar" src="avatar.png">
+
+<div class="image-layout">
+  <img class="avatar" src="avatar.png">
+</div>
+```
+
+尽量避免用JavaScript生成HTML标签，因为JavaScript 生成的标签让内容变得不易查找、编辑，并且降低性能。
+
+> 本HTML规范参照 [bootstrap编程规范](http://codeguide.bootcss.com/)，如有建议或补充，及时提出。
 
 
 
