@@ -8,7 +8,6 @@ HTML页面添加标准模式声明，确保在每一个浏览器中拥有一致�
   ...
 </html>
 
-
 // good
 <!DOCTYPE html>
 <html>
