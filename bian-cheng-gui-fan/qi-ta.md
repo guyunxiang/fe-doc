@@ -1,4 +1,4 @@
-# EditorConfig
+## EditorConfig
 
 ### 什么是 EditorConfig ?
 
