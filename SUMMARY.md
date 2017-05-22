@@ -10,5 +10,5 @@
   * [ES2015 编程规范](bian-cheng-gui-fan/es2015-bian-cheng-gui-fan.md)
   * [React 编程规范](bian-cheng-gui-fan/react-bian-cheng-gui-fan.md)
   * [Vue 编程规范](bian-cheng-gui-fan/vue-bian-cheng-gui-fan.md)
-
+  * [其他](bian-cheng-gui-fan/qi-ta.md)
 
