@@ -2,13 +2,13 @@
 
 HTML页面添加标准模式声明，确保在每一个浏览器中拥有一致的展示。
 
-```
-// bad
+```HTML
+<!-- bad -->
 <html>
   ...
 </html>
 
-// good
+<!-- good -->
 <!DOCTYPE html>
 <html>
   ...
@@ -17,13 +17,13 @@ HTML页面添加标准模式声明，确保在每一个浏览器中拥有一致�
 
 为html根元素指定lang属性，从而为页面设置正确的语言。
 
-```
-// bad
+```HTML
+<!-- bad -->
 <html>
   ...
 </html>
 
-// good
+<!-- good -->
 <html lang="zh-cn">
   ...
 </html>
@@ -31,38 +31,38 @@ HTML页面添加标准模式声明，确保在每一个浏览器中拥有一致�
 
 字符编码，设置声明字符编码meta。
 
-```
-// good
+```HTML
+<!-- good -->
 <meta charset="UTF-8">
 ```
 
 IE兼容模式，设置IE兼容模式meta。
 
-```
-// good
+```HTML
+<!-- good -->
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 ```
 
 对于属性的定义，确保全部使用双引号，不要使用单引号。
 
-```
-// bad
+```HTML
+<!-- bad -->
 <img src='images/logo.png' alt='logo'>
 
-// good
+<!-- good -->
 <img src="images/logo.png" alt="log">
 ```
 
 不要省略可选的结束标签（closing tag）（例如，`</li>`或`</body>`）。
 
 ```
-// bad
+<!-- bad -->
 <ul>
   <li>html编程规范，语法规范
   <li>html编程规范，语法规范
 </ul>  
 
-// good
+<!-- good -->
 <ul>
   <li>html编程规范，语法规范</li>
   <li>html编程规范，语法规范</li>
@@ -72,7 +72,7 @@ IE兼容模式，设置IE兼容模式meta。
 引入CSS和JavaScript文件，不需要指定type属性。
 
 ```
-// good
+<!-- good -->
 <link rel="stylesheet" href="code-guide.css">
 
 <style>
@@ -94,7 +94,7 @@ IE兼容模式，设置IE兼容模式meta。
 class 用于标识高度可复用组件，因此应该排在首位。id 用于标识具体组件，应当谨慎使用（例如，页面内的书签），因此排在第二位。
 
 ```
-// good
+<!-- good -->
 <a class="..." id="..." data-toggle="modal" href="#">
   Example link
 </a>
@@ -107,7 +107,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 布尔型属性不赋值
 
 ```
-// bad
+<!-- bad -->
 <input type="text" disabled="disabled">
 
 <input type="checkbox" value="1" checked="checked">
@@ -116,7 +116,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
   <option value="1" selected="selected">1</option>
 </select>
 
-// good
+<!-- good -->
 <input type="text" disabled>
 
 <input type="checkbox" value="1" checked>
@@ -131,12 +131,12 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 尽量减少标签的数量，但是也要注意在编写HTML时，结构与显示分离。
 
 ```
-// bad
+<!-- bad -->
 <span class="avatar">
   <img src="...">
 </span>
 
-// good
+<!-- good -->
 <img class="avatar" src="avatar.png">
 
 <div class="images-layout">
