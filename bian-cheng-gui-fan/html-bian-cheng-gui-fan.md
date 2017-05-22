@@ -43,7 +43,7 @@ IE兼容模式，设置IE兼容模式meta。
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 ```
 
-对于属性的定义，确保全部使用双引号，绝不要使用单引号。
+对于属性的定义，确保全部使用双引号，不要使用单引号。
 
 ```
 // bad
@@ -139,7 +139,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 // good
 <img class="avatar" src="avatar.png">
 
-<div class="image-layout">
+<div class="images-layout">
   <img class="avatar" src="avatar.png">
 </div>
 ```
