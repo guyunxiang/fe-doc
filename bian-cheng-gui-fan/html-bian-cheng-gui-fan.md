@@ -1,5 +1,7 @@
 # HTML 编程规范
 
+## 声明规范
+
 ### DOCTYPE 声明
 
 HTML页面添加标准模式声明，确保在每一个浏览器中拥有一致的展示。**强制**
@@ -36,10 +38,10 @@ HTML页面添加标准模式声明，确保在每一个浏览器中拥有一致�
 跟多地区语言参考：
 
 ```
-zh-SG 中文 (简体, 新加坡)   对应 cmn-Hans-SG 普通话 (简体, 新加坡)
-zh-HK 中文 (繁体, 香港)     对应 cmn-Hant-HK 普通话 (繁体, 香港)
-zh-MO 中文 (繁体, 澳门)     对应 cmn-Hant-MO 普通话 (繁体, 澳门)
-zh-TW 中文 (繁体, 台湾)     对应 cmn-Hant-TW 普通话 (繁体, 台湾)
+zh-SG 中文 (简体, 新加坡)
+zh-HK 中文 (繁体, 香港)
+zh-MO 中文 (繁体, 澳门)
+zh-TW 中文 (繁体, 台湾)
 ```
 
 ### 指定CHARSET字符编码
@@ -56,6 +58,8 @@ zh-TW 中文 (繁体, 台湾)     对应 cmn-Hant-TW 普通话 (繁体, 台湾)
 <meta charset="UTF-8">
 ```
 
+### 指定IE兼容模式meta
+
 IE兼容模式，设置IE兼容模式meta。
 
 ```HTML
@@ -63,7 +67,17 @@ IE兼容模式，设置IE兼容模式meta。
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 ```
 
-对于属性的定义，确保全部使用双引号，不要使用单引号。
+### 360浏览器极速模式
+
+```
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+```
+
+## 书写规范
+
+### 使用双引号
+
+对于属性的定义，确保全部使用双引号，不要使用单引号。**建议**
 
 ```HTML
 <!-- bad -->
@@ -73,7 +87,9 @@ IE兼容模式，设置IE兼容模式meta。
 <img src="images/logo.png" alt="log">
 ```
 
-不要省略可选的结束标签（closing tag）（例如，`</li>`或`</body>`）。
+### 标签闭合
+
+不要省略可选的结束标签（closing tag）（例如，`</li>`或`</body>`）。**强制**
 
 ```HTML
 <!-- bad -->
@@ -89,18 +105,37 @@ IE兼容模式，设置IE兼容模式meta。
 </ul>
 ```
 
-引入CSS和JavaScript文件，不需要指定type属性。
+### 自闭合标签结尾不加斜线
+
+自闭合的标签结尾结尾不要加斜线。**建议**
+
+空元素：area、base、br、col、command、embed、hr、img、input、keygen、link、meta、param、source、track、wbr
+
+```
+<!-- bad -->
+<img src="images/logo.png" alt="logo" />
+<br />
+
+<!-- good -->
+<img src="images/logo.png" alt="logo">
+<br>
+```
+
+### 类型属性
+
+引入CSS和JavaScript文件，不需要指定type属性。**建议**
 
 ```HTML
+<!-- bad -->
+<link rel="stylesheet" type="text/css" href="code-guide.css">
+<script type="text/javascript" src="index.js"></script>
+
 <!-- good -->
 <link rel="stylesheet" href="code-guide.css">
-
-<style>
-  ...
-</style>
-
-<src src="index.js"></script>
+<script src="index.js"></script>
 ```
+
+### **属性排列顺序优先级**
 
 按照以下顺序排列属性顺序：
 
@@ -111,7 +146,7 @@ IE兼容模式，设置IE兼容模式meta。
 * `title`,`alt`
 * `role`,`aria-*`
 
-class 用于标识高度可复用组件，因此应该排在首位。id 用于标识具体组件，应当谨慎使用（例如，页面内的书签），因此排在第二位。
+class 用于标识高度可复用组件，因此应该排在首位。id 用于标识具体组件，应当谨慎使用（例如，页面内的书签），因此排在第二位。**建议**
 
 ```HTML
 <!-- good -->
@@ -124,7 +159,19 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 <img src="..." alt="...">
 ```
 
-布尔型属性不赋值
+### 布尔型属性
+
+布尔型属性可以在声明时不赋值。XHTML 规范要求为其赋值，但是 HTML5 规范不需要。
+
+更多信息请参考 [WhatWG section on boolean attributes](http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#boolean-attributes)：
+
+> 元素的布尔型属性如果有值，就是 true，如果没有值，就是 false。
+
+如果一定要为其赋值的话，请参考 WhatWG 规范：
+
+> 如果属性存在，其值必须是空字符串或 \[...\] 属性的规范名称，并且不要在首尾添加空白符。
+
+布尔型的属性，不赋值。**建议**
 
 ```HTML
 <!-- bad -->
@@ -146,9 +193,21 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 </select>
 ```
 
----
+### **转义字符**
 
-尽量减少标签的数量，但是也要注意在编写HTML时，结构与显示分离。
+在 HTML 中不能使用小于号 “&lt;” 和大于号 “&gt;”特殊字符，浏览器会将它们作为标签解析，若要正确显示，在 HTML 源代码中使用字符实体。
+
+```
+<!-- bad -->
+<a href="#">more&gt;&gt;</a>
+
+<!-- good -->
+<a href="#">more>></a>
+```
+
+## 原则
+
+尽量减少标签的数量，但是也要注意在编写HTML时，结构与显示分离。**强制**
 
 ```HTML
 <!-- bad -->
@@ -166,7 +225,7 @@ class 用于标识高度可复用组件，因此应该排在首位。id 用于�
 
 尽量避免用JavaScript生成HTML标签，因为JavaScript 生成的标签让内容变得不易查找、编辑，并且降低性能。
 
-> 本HTML规范参照 [bootstrap编程规范](http://codeguide.bootcss.com/#html)，如有建议或补充，及时提出。
+> 本HTML规范如有建议或补充，及时提出。
 
 
 
