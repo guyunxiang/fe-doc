@@ -1,6 +1,8 @@
 # HTML 编程规范
 
-HTML页面添加标准模式声明，确保在每一个浏览器中拥有一致的展示。
+### DOCTYPE 声明
+
+HTML页面添加标准模式声明，确保在每一个浏览器中拥有一致的展示。**强制**
 
 ```HTML
 <!-- bad -->
@@ -15,7 +17,9 @@ HTML页面添加标准模式声明，确保在每一个浏览器中拥有一致�
 </html>
 ```
 
-为html根元素指定lang属性，从而为页面设置正确的语言。
+### 页面语言LANG
+
+为html根元素指定lang属性，从而为页面设置正确的语言。**建议**
 
 ```HTML
 <!-- bad -->
@@ -24,14 +28,30 @@ HTML页面添加标准模式声明，确保在每一个浏览器中拥有一致�
 </html>
 
 <!-- good -->
-<html lang="zh-cn">
+<html lang="zh-CN">
   ...
 </html>
 ```
 
-字符编码，设置声明字符编码meta。
+跟多地区语言参考：
+
+```
+zh-SG 中文 (简体, 新加坡)   对应 cmn-Hans-SG 普通话 (简体, 新加坡)
+zh-HK 中文 (繁体, 香港)     对应 cmn-Hant-HK 普通话 (繁体, 香港)
+zh-MO 中文 (繁体, 澳门)     对应 cmn-Hant-MO 普通话 (繁体, 澳门)
+zh-TW 中文 (繁体, 台湾)     对应 cmn-Hant-TW 普通话 (繁体, 台湾)
+```
+
+### 指定CHARSET字符编码
+
+字符编码，设置声明字符编码meta。**强制**
 
 ```HTML
+<!-- bad -->
+<meta charset="utf-8">
+<meta charset="utf8">
+<meta charset="UTF8">
+
 <!-- good -->
 <meta charset="UTF-8">
 ```
